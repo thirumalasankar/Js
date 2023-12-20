@@ -1,0 +1,550 @@
+<script> placed in <body> is more effiecient
+<script src="filename.js"></script> to link external js
+
+innerHTML
+document.getElementById("idname").innerHTML="changing content";
+
+document.write()
+used only for testing purposes we use document.write
+it will delete all existing html
+
+window.print() prints content of current browser
+window.alert() or alert() as window is global scope object
+acts as an alert box
+
+console.log()
+used for degubbing
+
+Keyword  Description
+var    	 Declares a variable
+let	     Declares a block variable
+const	 Declares a block constant
+if	     Marks a block of statements to be executed on a condition
+switch	 Marks a block of statements to be executed in different cases
+for	     Marks a block of statements to be executed in a loop
+function Declares a function
+return	 Exits a function
+try	     Implements error handling to a block of statements
+
+js values
+1) fixed values(literals)     	(numbers,string)
+2) variable values(variables)   (var,let,const used to assign varibales)
+
+
+comments
+1) // single line
+2) /* multi line */
+
+const pi = 3.14 used for not changing values
+let, var is used for variating values
+1)let 
+variables defined with let can't be redeclared, must be declared before use, 
+have block scope
+
+2)var
+var keyword have global scope
+
+let x = 2+3+"4";
+9              
+treats every character as number 
+
+let y = "1"+4+3;
+143
+treats every character as string as 1st character is string
+
+let $name = "shankar";
+let _name = "thiru";
+valid identifiers
+
+
+datatypes
+1.String
+2.Number
+3.Bigint
+4.Boolean
+5.Undefined
+6.Null
+7.Symbol
+8.Object
+
+
+object datatype contain
+1)An object
+2)An Array
+3)A date
+
+// Numbers:
+let length = 16;
+let weight = 7.5;
+
+// Strings:
+let color = "Yellow";
+let lastName = 'Johnson';
+
+// Booleans
+let x = true;
+let y = false;
+
+// Object:
+const person = {firstName:"John", lastName:"Doe"};
+
+accessing
+person.firstName;
+person["firstName"];
+
+
+// Array object:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Date object:
+const date = new Date("2022-03-25");
+
+
+HTML EVENTS
+<button onclick = "document.getELementById('idname').innerHTML=Date()">The time is?</button>
+
+Event	    Description
+onchange	An HTML element has been changed
+onclick	    The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	     The browser has finished loading the page
+
+
+**String
+
+let name = "Hello world";        // declaration
+let length = name.length;        // 11
+
+let name1 = new String("Hello World"); //name is an object
+name1 == name     //returns true
+name1 === name    //returns false
+
+string methods
+String length;
+ returns length 
+
+String slice(start,end);
+ returns a string with index in [start,end)
+ 
+String substring(start,end); 
+ same as slice but -ve is treated as 0
+ 
+String substr(start, length);
+ 
+String replace(initial,replacing string);
+
+String replaceAll(initial,replacing);
+
+String toUpperCase();
+
+String toLowerCase();
+
+String concat("",string);
+
+String trim();
+ removes spaces from end,begining of the staring
+ 
+String trimStart()
+ removes starting spaces
+
+String trimEnd()
+ removes ending spaces
+ 
+String padStart(totallength,padding ch)  
+
+String padEnd(2,"x") 
+
+String charAt(index)
+ same as string[index]
+ 
+String charCodeAt(index)
+ returns ascii values
+ 
+String split(" ")
+ split based on spaces 
+ 
+String indexOf("char",starting position)
+ returns staring index of char if present else -1
+ 
+String lastIndexOf("char",starting pos)
+ returns ending index of char if presnt elese -1
+ 
+String search("ch")
+ returns ch staring index 
+ same as indexOf but doesnt have 2nd argument
+ 
+String match()
+txt.match("ch") count(ch) ch
+txt.matxh(ch/g); case sensitive
+txt.match(/ch/gi); case insensitive returns count(ch) gi
+
+String matchAll()
+
+String includes("ch",starting pos)
+
+String startsWith("ch")
+
+String endsWith("ch")
+
+
+**
+let firstName = "John";
+let lastName = "Doe";
+let text = `Welcome ${firstName}, ${lastName}!`;
+
+typecasting 
+numberMethods
+Method	        Description
+toString()	    Returns a number as a string
+toExponential()	Returns a number written in exponential notation
+toFixed()	    Returns a number written with a number of decimals
+toPrecision()	Returns a number written with a specified length
+ValueOf()	    Returns a number as a number
+
+Method	         Description
+Number()	     Returns a number converted from its argument.
+parseFloat()	 Parses its argument and returns a floating point number
+parseInt()	     Parses its argument and returns a whole number
+
+
+Number(true);     // 1
+Number(false);    // 0
+Number("10");     // 10
+Number("  10");   // 10
+Number("10  ");   // 10
+Number(" 10  ");  // 10
+Number("10.33");  // 10.33 
+Number("10,33");  // NaN
+Number("10 33");  // NaN
+Number("John");   // NaN
+
+
+parseInt("-10");       //-10
+parseInt("-10.33");    //-10
+parseInt("10");        //10
+parseInt("10.33");     //10
+parseInt("10 20 30");  //10
+parseInt("143 years"); //143
+parseInt("years 10");  //NaN
+
+parseFloat("10");        //10
+parseFloat("10.33");     //10.33
+parseFloat("10 20 30");  //10
+parseFloat("10 years");  //10
+parseFloat("years 10");  //NaN
+
+
+let _pinf = Number.MAX_VALUE;
+let n1 = Number.POSITIVE_INFINITY;
+let _ninf = Number.MIN_VALUE;
+
+
+**Arrays
+
+const cars = ["val", "val2", "val3"]; //declaration
+cars[0]   // accessing 
+
+const fruits = ["apple", "kiwi", "orange","pineapple"]
+for(let i = 0;i<fruits.length;i++){
+    console.log(fruits[i]);
+}
+
+fruits.forEach(fun);
+function fun(item,index,fruits){
+console.log(`item ${index} --> ${item}`);
+}
+
+//push
+console.log(fruits.push("banana"));  //returns new arr length
+console.log(`After push operation ${fruits.toString()}`);
+
+//pop
+console.log(fruits.pop())       //returs poped elements
+console.log(`After pop op ${fruits.toString()}`);
+
+//shift 
+console.log(fruits.shift());      //returns shifted ele i.e(1st)
+console.log(`After shift op ${fruits.toString()}`);
+
+//unshift
+console.log(fruits.unshift("jerry"));   //returns new arry length
+console.log(`After unshift op ${fruits.toString()}`);
+
+//delete 
+delete fruits[0]
+console.log(`After deleting op ${fruits.toString()}`);
+ 
+//concat    //takes any number of arguments 
+console.log(fruits.concat(fruits,"ts","sm").toString());
+
+
+console.log(fruits);
+// splice(pos1,Rnum,"newELemnts")   returns deleted elements and modifies arr
+// pos1 -->   position at which new elements need to be added
+// Rnum -->   num of elemnst need to b removed
+// newELe --> new elements that we add
+console.log(fruits.splice(2,2,"ele1","ele2","ele3").toString());
+
+console.log(`new array after splice operation ${fruits.toString()}`);
+
+fruits.splice(0,1,"shankar");
+//slice(start,end)  return an array with indexes in [Start,end)
+console.log(fruits);
+console.log(fruits.slice(-4));
+
+const numbers = [100,2,3,4,58,6,7,8,9];
+console.log(numbers.sort()); // sort in ascending order of strings
+console.log(numbers.sort(sortAscending).toString());  
+console.log(numbers.sort(sortDescending).toString());
+function sortAscending(a,b){
+    return a - b;
+}
+function sortDescending(x,y){
+    return y-x;
+}
+
+
+//map fn --> doesnot change original array
+//maps each elements with some operations
+console.log(numbers.map(fn1));
+
+function fn1(val,index,numbers){
+    if (val > 10){
+        return val*1;
+    }
+    else{
+        return val*10;
+    }
+}
+
+console.log(numbers);
+
+
+//filter
+//creates new array which passes the test
+
+console.log(numbers.filter(fn2));
+function fn2(val,index,numbers){
+    return val > 40;
+}
+
+const n = [1,2,3,4,5,6];
+//reduce
+console.log(n.reduce(fn3,0));
+//let sum = 1;
+function fn3(sum,val,ind,n){
+    return sum + val;
+}
+
+
+//every
+console.log(n.every(fn4));
+function fn4(val,ind,n){
+    return val>2;
+}
+
+//some
+console.log(n.some(fn4));
+
+
+//indexOf
+console.log(numbers.indexOf(-2));
+console.log(numbers.indexOf(100,1));
+console.log(`100 is presnt in ${numbers.lastIndexOf(100)} index`);
+
+
+//find() returns fast ele that passes d test
+console.log(n.find(fn4));
+
+//findIndex() returns all ele that passes d test
+console.log(n.findIndex(fn4));
+
+output:---
+
+apple
+kiwi
+orange
+pineapple
+item 0 --> apple
+item 1 --> kiwi
+item 2 --> orange
+item 3 --> pineapple
+5
+After push operation apple,kiwi,orange,pineapple,banana
+banana
+After pop op apple,kiwi,orange,pineapple
+apple
+After shift op kiwi,orange,pineapple
+4
+After unshift op jerry,kiwi,orange,pineapple
+After deleting op ,kiwi,orange,pineapple
+,kiwi,orange,pineapple,,kiwi,orange,pineapple,ts,sm   
+[ <1 empty item>, 'kiwi', 'orange', 'pineapple' ]     
+orange,pineapple
+new array after splice operation ,kiwi,ele1,ele2,ele3 
+[ 'shankar', 'kiwi', 'ele1', 'ele2', 'ele3' ]
+[ 'kiwi', 'ele1', 'ele2', 'ele3' ]
+[
+  100, 2, 3, 4, 58,
+    6, 7, 8, 9
+]
+2,3,4,6,7,8,9,58,100
+100,58,9,8,7,6,4,3,2
+[
+  100, 58, 90, 80, 70,
+   60, 40, 30, 20
+]
+[
+  100, 58, 9, 8, 7,
+    6,  4, 3, 2
+]
+[ 100, 58 ]
+21
+false
+true
+-1
+-1
+100 is presnt in 0 index
+3
+2
+
+
+mathMethods
+Math.round(x)	Returns x rounded to its nearest integer
+Math.ceil(x)	Returns x rounded up to its nearest integer
+Math.floor(x)	Returns x rounded down to its nearest integer
+Math.trunc(x)	Returns the integer part of x (new in ES6)
+Math.sign(x)    Return 1,0,-1 if x = +ve returns 1
+                                 x = -ve return -1
+								 x = 0  return 0
+Math.pow(2,3);      //8
+Math.sqrt(4);       //4
+Math.abs(-9);       //9
+Math.min(1,2,34,5)  //1
+Math.mac(1,2,34,5)  //34
+
+// Returns a random integer from 0 to 9:
+Math.floor(Math.random() * 10);
+
+//returns a random integer from 1 to 10;
+Math.floor(Math.random() *10)+1;
+
+let name = null;
+let text = "missing";
+let result = name ?? text;  //missing
+
+
+
+**control flow statements
+
+
+let x = "0";
+switch (x) {
+  case 0:
+    text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+}
+//No Value found (switch case uses ===)
+
+
+
+const wnum = [0,1,2,3,4,5,6,7,8,9,10];
+console.log(wnum);
+ 
+
+const nam = "Thirumala sankar Gurijala";
+let hmp = {};
+//for loop
+for(let i=0; i<nam.length; i++){
+    if (nam[i] == " "){
+        continue;
+    }
+    if (nam[i] in hmp){
+        hmp[nam[i]] += 1;
+    }
+    else{
+        hmp[nam.charAt(i)] = 1;
+    }
+
+    //console.log(nam.charAt(i));
+}
+
+// Object.keys(hmp);
+//object.values(hmp);
+
+let charVal = Object.entries(hmp);
+console.log(charVal);
+
+
+const ans = []
+//for-of loop
+for([k,v] of charVal){
+    if (v==1){
+    console.log(k);
+    ans.push(k);
+    }
+}
+
+
+for(ch of ans){
+    console.log(ch);
+}
+
+
+
+//for-Each in js
+let res = ans.forEach(fn1);
+function fn1(val,ind,arr){
+    console.log(val);
+}
+
+
+**output :--
+[
+
+   0, 1, 2, 3, 4,
+   5, 6, 7, 8, 9,
+  10
+]
+[
+  [ 'T', 1 ], [ 'h', 1 ],
+  [ 'i', 2 ], [ 'r', 3 ],
+  [ 'u', 2 ], [ 'm', 1 ],
+  [ 'a', 6 ], [ 'l', 2 ],
+  [ 's', 1 ], [ 'n', 1 ],
+  [ 'k', 1 ], [ 'G', 1 ],
+  [ 'j', 1 ]
+]
+T
+h
+m
+s
+n
+k
+G
+j
+
+T
+h
+m
+s
+n
+k
+G
+j
+
+T
+h
+m
+s
+n
+k
+G
+j
